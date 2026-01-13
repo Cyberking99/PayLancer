@@ -1,12 +1,19 @@
 # Paylancer
 
-Paylancer is a platform that allows freelancers to generate onchain invoices payable in stablecoins (like USDC on Base), with optional streaming payments.
+**Paylancer** is a decentralized invoicing and payment platform tailored for the gig economy. Built on the **Base** Layer 2 network, it empowers freelancers and clients with secure, transparent, and efficient financial tools.
 
-## Features
+## The Problem
 
-- **Onchain Invoices**: Generate secure and verifiable invoices on the blockchain.
-- **Stablecoin Payments**: Accept payments in stablecoins like USDC on the Base network.
-- **Streaming Payments**: Option to receive payments in real-time streams.
+Freelancers often face delayed payments, high transaction fees from traditional payment processors, and a lack of payment guarantees. International transfers can take days to settle and incur significant currency conversion costs.
+
+## The Solution
+
+Paylancer leverages blockchain technology to solve these issues:
+
+- **Onchain Invoices**: Create immutable, verifiable invoices that serve as a single source of truth.
+- **Stablecoin Settlements**: All payments are settled in **USDC**, shielding users from crypto volatility and ensuring 1:1 value with the US Dollar.
+- **Real-Time Streaming**: For hourly contracts or retainers, payments can be streamed second-by-second, ensuring freelancers get paid as they work.
+- **Low Fees**: Operating on the Base network ensures transactions are fast and cost fractions of a cent.
 
 ## Project Structure
 
