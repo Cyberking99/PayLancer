@@ -63,4 +63,21 @@ contract PayLancer {
         );
         nextInvoiceId++;
     }
+
+    function payInvoice(uint256 _invoiceId) external {
+        Invoice storage invoice = invoices[_invoiceId];
+        require(invoice.id != 0, "Invoice does not exist");
+        require(!invoice.isPaid, "Invoice already paid");
+        require(msg.sender == invoice.client, "Only client can pay");
+
+        bool success = IERC20(invoice.token).transferFrom(
+            msg.sender,
+            invoice.creator,
+            invoice.amount
+        );
+        require(success, "Payment failed");
+
+        invoice.isPaid = true;
+        emit InvoicePaid(_invoiceId, msg.sender);
+    }
 }
