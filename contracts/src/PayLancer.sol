@@ -39,4 +39,28 @@ contract PayLancer {
     constructor() {
         nextInvoiceId = 1;
     }
+
+    function createInvoice(
+        address _client,
+        uint256 _amount,
+        address _token
+    ) external {
+        invoices[nextInvoiceId] = Invoice({
+            id: nextInvoiceId,
+            creator: msg.sender,
+            client: _client,
+            amount: _amount,
+            token: _token,
+            isPaid: false
+        });
+
+        emit InvoiceCreated(
+            nextInvoiceId,
+            msg.sender,
+            _client,
+            _amount,
+            _token
+        );
+        nextInvoiceId++;
+    }
 }
